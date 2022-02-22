@@ -1,0 +1,77 @@
+
+/* apply to all */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex; /* center in viewport */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of viewport */
+    overflow: hidden;
+    margin: 0;
+    background-color: black;
+}
+
+.header h1 {
+    color: white;
+    text-align: center;
+    size: ;
+}
+
+/* container wrapped around panels, display them horizontally */
+.container {
+    display: flex; 
+    width: 90vw;
+}
+
+/* Style the pictures */
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 15px; /* rounded pictures */
+    color: white;
+    cursor: pointer;
+    flex: 0.5; /* equal size images */
+    margin: 8px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+/* Style text */
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0; /* Cannot see unless they are active */
+}
+
+/* resize active image */
+.panel.active {
+    flex: 8;
+}
+
+/* Allows active panel to show text */
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* resize if the screen is small */
+@media(max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    /* removes the last two panels */
+    /*  .panel:nth-of-type(4), 
+    .panel:nth-of-type(5) {
+        display: none;
+    }*/
+}
